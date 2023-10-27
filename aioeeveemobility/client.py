@@ -7,9 +7,12 @@ import time
 from .const import TOKEN_URL, API_URL, CLIENT_ID, CLIENT_SECRET
 
 class EeveeMobilityClient:
+    """Class to communicate with the EEVEE Mobility API."""
+
     def __init__(
         self, username, password, custom_headers=None
     ):
+        """Initialize the API to get data."""
         self.username = username
         self.password = password
         self.token = None
@@ -17,15 +20,18 @@ class EeveeMobilityClient:
         self.custom_headers = custom_headers or {}
 
     async def start_session(self):
+        """Start the aiohttp session."""
         if self.session is None:
             self.session = aiohttp.ClientSession(headers=self.custom_headers)
 
     async def close_session(self):
+        """Close the session."""
         if self.session:
             await self.session.close()
             self.session = None
 
     async def get_token(self, force=False):
+        """Get the OAuth token."""
         if self.token is None or force is True:
             async with self.session.post(
                 TOKEN_URL,
@@ -42,6 +48,7 @@ class EeveeMobilityClient:
         return self.token["access_token"]
 
     async def request(self, path):
+        """Send an authorized request to an API endpoint."""
         if self.session is None:
             await self.start_session()
 
