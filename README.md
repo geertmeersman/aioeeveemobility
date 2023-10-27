@@ -33,16 +33,9 @@ import json
 import aiohttp
 
 async def main():
-    custom_headers = {
-        "Timezone": "",
-        "beta-version": "0",
-        "App-Version": "28006",
-    }
-
     client = EeveeMobilityClient(
         "user@email.com",
         "yourpassword",
-        custom_headers,
     )
 
     try:
