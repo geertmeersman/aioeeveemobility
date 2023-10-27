@@ -39,7 +39,7 @@ async def main():
         "App-Version": "28006",
     }
 
-    client = EeveeMobilityOAuth2Client(
+    client = EeveeMobilityClient(
         "user@email.com",
         "yourpassword",
         custom_headers,
