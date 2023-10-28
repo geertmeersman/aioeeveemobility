@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.1](https://github.com/geertmeersman/aioeeveemobility/tree/v0.1.1) (2023-10-28)
+
+[Full Changelog](https://github.com/geertmeersman/aioeeveemobility/compare/v0.1.0...v0.1.1)
+
+**Merged pull requests:**
+
+- fix: move custom headers to the CONST and add them by default [\#4](https://github.com/geertmeersman/aioeeveemobility/pull/4) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.0](https://github.com/geertmeersman/aioeeveemobility/tree/v0.1.0) (2023-10-27)
 
 [Full Changelog](https://github.com/geertmeersman/aioeeveemobility/compare/def0451cad87f5a0829627f24dba8f470965c279...v0.1.0)
