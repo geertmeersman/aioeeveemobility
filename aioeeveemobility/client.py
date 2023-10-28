@@ -4,7 +4,7 @@ from __future__ import annotations
 import aiohttp
 from datetime import datetime
 import time
-from .const import TOKEN_URL, API_URL, CLIENT_ID, CLIENT_SECRET
+from .const import TOKEN_URL, API_URL, CLIENT_ID, CLIENT_SECRET, HEADERS
 
 class EeveeMobilityClient:
     """Class to communicate with the EEVEE Mobility API."""
@@ -55,6 +55,7 @@ class EeveeMobilityClient:
         endpoint_path = f"{API_URL}/{path}"
         token = await self.get_token()
         headers = {"Authorization": f"Bearer {token}"}
+        headers.update(HEADERS)
         headers.update(self.custom_headers)
 
         async with self.session.get(endpoint_path, headers=headers) as response:
