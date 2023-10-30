@@ -10,10 +10,10 @@ class EeveeMobilityClient:
     """Class to communicate with the EEVEE Mobility API."""
 
     def __init__(
-        self, username, password, custom_headers=None
+        self, email, password, custom_headers=None
     ):
         """Initialize the API to get data."""
-        self.username = username
+        self.email = email
         self.password = password
         self.token = None
         self.session = None
@@ -39,7 +39,7 @@ class EeveeMobilityClient:
                     "grant_type": "password",
                     "client_id": CLIENT_ID,
                     "client_secret": CLIENT_SECRET,
-                    "username": self.username,
+                    "username": self.email,
                     "password": self.password,
                 },
             ) as response:
