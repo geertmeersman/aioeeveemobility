@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.2](https://github.com/geertmeersman/aioeeveemobility/tree/v0.1.2) (2023-10-30)
+
+[Full Changelog](https://github.com/geertmeersman/aioeeveemobility/compare/v0.1.1...v0.1.2)
+
+**Merged pull requests:**
+
+- refactor: renamed username to email [\#5](https://github.com/geertmeersman/aioeeveemobility/pull/5) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.1](https://github.com/geertmeersman/aioeeveemobility/tree/v0.1.1) (2023-10-28)
 
 [Full Changelog](https://github.com/geertmeersman/aioeeveemobility/compare/v0.1.0...v0.1.1)
