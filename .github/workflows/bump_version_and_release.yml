@@ -68,7 +68,23 @@ jobs:
       - name: ✅　Commit release notes
         uses: EndBug/add-and-commit@v9
         with:
-          message: Commit release notes ${{ steps.release_drafter.outputs.tag_name }}
+          message: Commit release notes
+
+      - name: ✅　Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: ✅　Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+      - name: ✅　Build and publish
+        env:
+          TWINE_USERNAME: "__token__"
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python setup.py sdist bdist_wheel
+          twine upload dist/*
       - name: Discord notification
         env:
           tag_name: ${{ steps.release_drafter.outputs.tag_name }}
