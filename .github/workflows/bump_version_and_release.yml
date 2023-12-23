@@ -29,22 +29,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: 🔄　Update version in 'VERSION' and 'manifest.json' and push changes
+      - name: 🔄　Update version in 'setup.py' and push changes
         env:
           tag_name: ${{ steps.release_drafter.outputs.tag_name }}
           GITHUB_REPO: ${{ github.event.repository.name }}
         run: |
-          echo "** Manifest before replace **"
-          cat custom_components/$GITHUB_REPO/manifest.json
-          sed -i 's/"version": ".*"/"version": "'$tag_name'"/g' custom_components/$GITHUB_REPO/manifest.json
-          echo "** Manifest after replace **"
-          cat custom_components/$GITHUB_REPO/manifest.json
+          sed -i 's/version=".*"/version="'$tag_name'"/g' setup.py
           echo $tag_name > VERSION
 
       - name: 🚀　Add and commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          message: Bump version ${{ steps.release_drafter.outputs.tag_name }}
+          message: Bump version
 
       - name: 📝　Publish release
         uses: release-drafter/release-drafter@v5
