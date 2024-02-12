@@ -2,7 +2,7 @@
 
 target-version = "py310"
 
-select = [
+lint.select = [
     "B007", # Loop control variable {name} not used within loop body
     "B014", # Exception handler with duplicate exception
     "C",  # complexity
@@ -26,7 +26,7 @@ select = [
     "W",  # pycodestyle
 ]
 
-ignore = [
+lint.ignore = [
     "D203",  # one-blank-line-before-class
     "D213",  # multi-line-summary-second-line
     "F401",  # multi-line-summary-second-line
@@ -34,8 +34,8 @@ ignore = [
     "T201",  # 'print' found
 ]
 
-[flake8-pytest-style]
+[lint.flake8-pytest-style]
 fixture-parentheses = false
 
-[mccabe]
+[lint.mccabe]
 max-complexity = 40
