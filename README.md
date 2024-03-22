@@ -53,7 +53,7 @@ async def main():
                     break
             print(f"Fleet: {fleet.get('fleet').get('name')}, {entity.get('name')} | Payout rate: {fleet.get('payout_rate').get('rate')} {fleet.get('payout_rate').get('currency_code')} {fleet.get('payout_rate').get('suffix')}")
 
-        cars = await client.request(f"cars")
+        cars = await client.request("cars")
         for car in cars:
             print(f"Your car: {car.get('display_name')} {car.get('license')}")
             addresses = await client.request(f"cars/{car.get('id')}/addresses")
