@@ -1,6 +1,6 @@
 # aioeeveemobility
 
-Asynchronous library to communicate with the EEVEE Mobility API
+The EEVEE Mobility Client is a Python library for interacting with the EEVEE Mobility API asynchronously using aiohttp.
 
 [![maintainer](https://img.shields.io/badge/maintainer-Geert%20Meersman-green?style=for-the-badge&logo=github)](https://github.com/geertmeersman)
 [![buyme_coffee](https://img.shields.io/badge/Buy%20me%20an%20Omer-donate-yellow?style=for-the-badge&logo=buymeacoffee)](https://www.buymeacoffee.com/geertmeersman)
@@ -21,16 +21,21 @@ Asynchronous library to communicate with the EEVEE Mobility API
 [![github contributors](https://img.shields.io/github/contributors/geertmeersman/aioeeveemobility)](https://github.com/geertmeersman/aioeeveemobility/graphs/contributors)
 [![github commit activity](https://img.shields.io/github/commit-activity/y/geertmeersman/aioeeveemobility?logo=github)](https://github.com/geertmeersman/aioeeveemobility/commits/main)
 
+## Installation
 
-## API Example
+You can install the EEVEE Mobility Client via pip:
+
+```bash
+pip install aioeeveemobility
+```
+
+## Usage
 
 ```python
 """Test for aioeeveemobility."""
 from aioeeveemobility import EeveeMobilityClient
 
 import asyncio
-import json
-import aiohttp
 
 async def main():
     client = EeveeMobilityClient(
@@ -61,7 +66,15 @@ async def main():
                 print(event)
 
     finally:
-        await client.close_session()
+        await client._close_session()
 
 asyncio.run(main())
 ```
+
+## Contributing
+
+Contributions are welcome! Please refer to the [Contribution Guidelines](CONTRIBUTING.md) for more information.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
