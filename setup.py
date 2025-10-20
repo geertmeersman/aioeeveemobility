@@ -19,6 +19,6 @@ setuptools.setup(
         "License :: OSI Approved :: Apache Software License",
         "Operating System :: OS Independent",
     ],
-    install_requires=[val.strip() for val in open("requirements.txt")],
+    install_requires=[],  # no runtime dependencies
     version="v0.1.3",
 )
